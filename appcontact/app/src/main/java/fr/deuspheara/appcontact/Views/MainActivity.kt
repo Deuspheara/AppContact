@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import fr.deuspheara.appcontact.R
 import fr.deuspheara.appcontact.Utils.Contact
+import fr.deuspheara.appcontact.Utils.JsonToContact
 
 class MainActivity : AppCompatActivity() {
     var recyclerView : RecyclerView? = null
@@ -16,11 +17,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        railwayList = arrayListOf(
-            Contact(0, "Dupont", "Jean", "Jean Dupont", 34,"email@gmail.fr","picture"),
-            Contact(0, "Dupont", "Jean", "Jean Dupont", 34,"email@gmail.fr","picture"),
-        )
+        var jsonToContact = JsonToContact()
+        railwayList = jsonToContact.getContactList("contacts.json", this)
 
         recyclerView = findViewById(R.id.contactRecyclerView)
         recyclerView?.layoutManager = LinearLayoutManager(this)

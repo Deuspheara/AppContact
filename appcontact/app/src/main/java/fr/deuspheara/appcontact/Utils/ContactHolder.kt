@@ -24,6 +24,7 @@ class ContactHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         fullname.text = contact.fullname
         email.text = contact.email
         age.text = contact.age.toString()
+        DownloadImage(picture).execute(contact.picture)
         sendButton.setOnClickListener {
             sendEmail(contact)
         }
