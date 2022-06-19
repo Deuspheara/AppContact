@@ -16,7 +16,7 @@ class Contact {
         fullname: String,
         age: Int,
         email: String,
-        picture: String
+        picture: String,
     ) {
         this.id = id
         this.name = name

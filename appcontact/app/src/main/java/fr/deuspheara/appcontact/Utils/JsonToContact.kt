@@ -19,6 +19,7 @@ public class JsonToContact {
         val assetManager: AssetManager = context.getAssets()
         val json: String?
 
+        //parse json file
         try {
             val inputStream = assetManager.open(jsonFile)
             val size = inputStream.available()
@@ -33,9 +34,11 @@ public class JsonToContact {
             return ArrayList()
         }
 
+        //  Add json data to ArrayList of contact
         try {
             val obj = JSONObject(json)
             val userArray = obj.getJSONArray("items")
+            //looping through All Contacts
             for (i in 0 until userArray.length()) {
                 val userObj = userArray.getJSONObject(i)
                 val contact = Contact(

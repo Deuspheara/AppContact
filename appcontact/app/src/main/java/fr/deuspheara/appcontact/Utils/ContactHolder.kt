@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import fr.deuspheara.appcontact.R
 
 class ContactHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+
     var name = itemView.findViewById<TextView>(R.id.name);
     var surname = itemView.findViewById<TextView>(R.id.surname)
     var fullname = itemView.findViewById<TextView>(R.id.fullname)
@@ -18,17 +19,20 @@ class ContactHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
     var picture = itemView.findViewById<ImageView>(R.id.profilePicture)
     var sendButton = itemView.findViewById<ImageButton>(R.id.send)
 
+    //bind the contact data to the view
     fun bind(contact : Contact) {
-        name.text = contact.name
-        surname.text = contact.surname
-        fullname.text = contact.fullname
-        email.text = contact.email
-        age.text = contact.age.toString()
-        DownloadImage(picture).execute(contact.picture)
-        sendButton.setOnClickListener {
-            sendEmail(contact)
-        }
+            name.text = contact.name
+            surname.text = contact.surname
+            fullname.text = contact.fullname
+            email.text = contact.email
+            age.text = contact.age.toString()
+            DownloadImage(picture).execute(contact.picture)
+            sendButton.setOnClickListener {
+                sendEmail(contact)
+            }
+
     }
+    //open app contact to send an email
     fun sendEmail(contact : Contact) {
         val intent = Intent(Intent.ACTION_SEND)
         intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(contact.email))
