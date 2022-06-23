@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/2022/app/appcontact/app/src/main/res/drawable/rectangle.xml" value="0.2985" />
+        <entry key="..\:/2022/app/appcontact/app/src/main/res/drawable/roundcorner.xml" value="0.2985" />
         <entry key="..\:/2022/app/appcontact/app/src/main/res/layout-v31/contact_adapter_view.xml" value="0.67" />
         <entry key="..\:/2022/app/appcontact/app/src/main/res/layout/activity_info_contact.xml" value="0.33" />
-        <entry key="..\:/2022/app/appcontact/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/2022/app/appcontact/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/2022/app/appcontact/app/src/main/res/layout/contact_adapter_view.xml" value="0.5" />
         <entry key="..\:/2022/app/appcontact/app/src/main/res/layout/layout.xml" value="0.165625" />
         <entry key="..\:/2022/app/appcontact/app/src/main/res/xml/shadow.xml" value="0.16458333333333333" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

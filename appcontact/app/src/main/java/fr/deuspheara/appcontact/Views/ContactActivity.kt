@@ -1,10 +1,13 @@
 package fr.deuspheara.appcontact.Views
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import fr.deuspheara.appcontact.R
 import fr.deuspheara.appcontact.Utils.Contact
 import fr.deuspheara.appcontact.Utils.DownloadImage
@@ -33,7 +36,19 @@ class ContactActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.cage).text = contact!!.age.toString()
         findViewById<TextView>(R.id.cemail).text = contact!!.email
         DownloadImage(findViewById<ImageView>(R.id.cprofilePicture)).execute(contact!!.picture)
+        findViewById<Button>(R.id.buttonMail).setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(contact!!.email))
+            intent.putExtra(Intent.EXTRA_SUBJECT, "subject")
+            intent.putExtra(Intent.EXTRA_TEXT, "message")
+            intent.setType("message/rfc822")
+            startActivity(Intent.createChooser(intent, "Send Email using:"));
 
+        }
+
+        findViewById<ImageButton>(R.id.buttonBack).setOnClickListener {
+            finish()
+        }
 
 
     }

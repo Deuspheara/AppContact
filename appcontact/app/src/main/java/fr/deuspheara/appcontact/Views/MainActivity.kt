@@ -70,7 +70,6 @@ class MainActivity : AppCompatActivity() {
 
         //initialise searchView
         searchView = findViewById<SearchView>(R.id.searchContact)
-        searchView?.onActionViewExpanded()
         searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 //filter contact that match the query
@@ -100,7 +99,7 @@ class MainActivity : AppCompatActivity() {
             val editor: SharedPreferences.Editor = sharedpreferences.edit()
             editor.clear()
             railwayList = jsonToContact.getContactList("contacts.json", this)
-                        editor.putString("contacts",Gson().toJson(railwayList))
+            editor.putString("contacts",Gson().toJson(railwayList))
 
             adapter!!.currentResults = railwayList
             adapter!!.notifyDataSetChanged()
